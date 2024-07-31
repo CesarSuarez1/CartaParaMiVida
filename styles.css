@@ -1,0 +1,410 @@
+/* Animaciones para el sobre y los corazones */
+@keyframes vibrate {
+    0% { transform: translateX(-1px); }
+    25% { transform: translateX(1px); }
+    50% { transform: translateX(-1px); }
+    75% { transform: translateX(1px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes heartAnimation {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: translateY(-500px) scale(1.5); opacity: 0; }
+}
+
+@keyframes bubbleAnimation {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-300px) scale(1.2); opacity: 0.5; }
+    100% { transform: translateY(-600px) scale(1); opacity: 0; }
+}
+
+@keyframes heartMove {
+    0% { transform: translateX(-100px); opacity: 1; }
+    100% { transform: translateX(100vw); opacity: 0; }
+}
+
+body {
+    font-family: 'Garamond', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f8b3d4, #f5a9b8); /* Degradado rosa */
+    overflow: hidden; /* Evitar el desbordamiento de las burbujas */
+    margin: 0;
+}
+
+.footer-text {
+    font-family: 'PoetsenOne', serif; /* Cambiar a PoetsenOne */
+    font-size: 24px; /* Tamaño de fuente aumentado */
+    font-weight: 700; /* Texto en negrita */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+/* Estilo para las burbujas */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 60px;
+    height: 60px;
+    animation: bubbleAnimation 6s infinite;
+    opacity: 0.4;
+}
+
+.bubble:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 5s;
+}
+
+.bubble:nth-child(2) {
+    top: 50%;
+    left: 30%;
+    width: 70px;
+    height: 70px;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    top: 70%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(4) {
+    top: 30%;
+    left: 70%;
+    width: 50px;
+    height: 50px;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(5) {
+    top: 60%;
+    left: 80%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(6) {
+    top: 90%;
+    left: 20%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 5s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(7) {
+    top: 75%;
+    left: 90%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 5s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(8) {
+    top: 50%;
+    left: 5%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(9) {
+    top: 85%;
+    left: 75%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+/* Estilo mejorado para los corazones */
+.heart-moving {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: url('https://img.icons8.com/ios/50/000000/like.png') no-repeat center center;
+    background-size: contain;
+    animation: heartMove 4s linear infinite;
+    opacity: 0.5;
+    z-index: -1; /* Asegura que los corazones estén detrás de otros elementos */
+}
+
+/* Estilo mejorado para los botones */
+.btn {
+    margin: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    background: linear-gradient(145deg, #e83e8c, #d63384); /* Degradado rosa */
+    color: #fff; /* Texto en blanco */
+    cursor: pointer;
+    border-radius: 25px; /* Bordes redondeados */
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Garamond', serif; /* Fuente elegante */
+    text-transform: uppercase; /* Texto en may�sculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.btn:hover {
+    background: linear-gradient(145deg, #d63384, #e83e8c); /* Inversi�n del degradado al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra m�s pronunciada */
+    transform: scale(1.05); /* Agrandar ligeramente el bot�n */
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(232, 62, 140, 0.5); /* Sombra de enfoque */
+}
+
+/* Animaci�n de pulsaci�n para los botones */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn:active {
+    animation: pulse 0.2s ease;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    position: relative;
+}
+
+.card {
+    width: 350px; /* Tama�o de las tarjetas */
+    height: 500px; /* Tama�o de las tarjetas */
+    perspective: 1000px;
+    margin: 0 100px; /* Separaci�n entre las tarjetas y el sobre */
+    position: relative;
+    border-radius: 12px; /* Esquinas m�s redondeadas */
+    overflow: hidden;
+    transition: transform 0.6s, box-shadow 0.3s; /* Transici�n para el borde de ne�n */
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgba(233, 30, 99, 0.8); /* Borde de ne�n rosa al pasar el cursor */
+}
+
+/* Estilo para la parte de enfrente de la primera carta */
+#leftCard .front {
+    background-color: #fff; /* Color de fondo blanco */
+    border: 3px solid #e83e8c; /* Borde decorativo */
+}
+
+/* Estilo para la parte de enfrente de la segunda carta */
+#rightCard .front {
+    background-color: #fdf5e0; /* Color de fondo vainilla */
+    border: 3px solid #e83e8c; /* Borde decorativo */
+}
+
+/* Otros estilos que ya tienes para las cartas */
+.card .front, .card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 12px;
+}
+
+.card .front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .front img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.card .back {
+    background-color: #fce4ec; /* Color de fondo más suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: rotateY(180deg);
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra interna */
+    text-align: center; /* Centramos el texto */
+    padding: 20px; /* Padding uniforme para evitar márgenes no deseados */
+    box-sizing: border-box; /* Incluye el padding dentro del ancho total */
+}
+
+.card .back h2 {
+    margin: 10px 0; /* Ajusta este valor para cambiar el margen vertical del título */
+    font-size: 24px; /* Tamaño del título */
+    color: #e83e8c; /* Color del título */
+    font-family: 'Garamond', serif;
+}
+
+.card .back p {
+    margin: auto; /* Ajusta los márgenes para centrar el texto */
+    color: #333;
+    font-size: 18px;
+    font-family: 'Garamond', serif;
+    text-align: center; /* Alinea el texto en el centro */
+    max-width: 90%; /* Limita el ancho del texto para evitar desbordamientos */
+    word-wrap: break-word; /* Permite la palabra ajustarse al ancho máximo */
+}
+
+
+.card.flip .front {
+    transform: rotateY(180deg);
+}
+
+.card.flip .back {
+    transform: rotateY(0);
+}
+
+.envelope-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.heart-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('https://img.icons8.com/ios/50/000000/like.png') no-repeat center center;
+    background-size: contain;
+    animation: heartAnimation 3s linear forwards;
+}
+
+.envelope {
+    position: relative;
+    width: 420px;
+    height: 300px;
+    background-color: #f8d7da;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid #e83e8c;
+    transition: height 0.8s ease-in-out;
+}
+
+.flap {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #f5c6cb;
+    top: 0;
+    left: 0;
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: transform 0.8s ease-in-out;
+    border-radius: 12px 12px 0 0;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.letter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(100%);
+    width: 330px;
+    background-color: #fff;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.8s ease-in-out, height 0.8s ease-in-out;
+    border-radius: 12px;
+    font-family: 'Garamond', serif;
+    border: 2px solid #e83e8c;
+}
+
+.letter p {
+    margin: 10px 0;
+}
+
+.photo {
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
+    border: 2px solid #e83e8c;
+    border-radius: 12px;
+}
+
+.play-button {
+    background-color: #ff69b4; /* Rosa degradado para el botón */
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.play-button:active {
+    transform: scale(0.9);
+}
+
+/* Esto asegura que los 3 botones tengan un estilo consistente */
+.btn {
+    background-color: #ff69b4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff1493;
+}
